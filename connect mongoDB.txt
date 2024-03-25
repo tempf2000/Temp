@@ -1,0 +1,33 @@
+Steps:
+1 create a new folder anywhere and name it
+2 open visual studio code
+3 open the folder you create in visual studio code
+4 open terminal : new terminal
+5 write “npm init” press enter 
+6 write “npm install mongoose” command to install mongoose
+7 create a file name “index.js” in the folder you currently working with
+8 write javascript code given below in “index.js”
+
+
+const { MongoClient } = require('mongodb');
+// Connection URI
+const uri = 'mongodb://localhost:27017';
+// Database Name
+const dbName = 'myDatabase';
+// Create a new MongoClient
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// Use connect method to connect to the Server
+client.connect(function(err) {
+  if (err) {
+    console.error('Failed to connect to the database:', err);
+    return;
+  }
+  console.log('Connected successfully to the server');
+  const db = client.db(dbName);
+  // Perform operations using the `db` object
+  // Close the client connection
+  client.close();
+});
+
+
+9 to run it open terminal and type “node index.js” press enter

@@ -1,0 +1,32 @@
+Step 1
+Create a file named “input.txt”in the same folder where is your index.js file is
+“write code in input.txt”
+Hello, this is some text in the input file.
+
+Step2
+“write code in index.js”
+
+const fs = require('fs');
+const inputFilePath = 'input.txt';
+const outputFilePath = 'output.txt';
+// Read data from input file
+fs.readFile(inputFilePath, 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading file:', err);
+    return;
+  }
+  console.log('Data read from file:', data);
+  // Write data to output file
+  fs.writeFile(outputFilePath, data, (err) => {
+    if (err) {
+      console.error('Error writing to file:', err);
+      return;
+    }
+    console.log('Data written to file');
+  });
+});
+
+Step 3
+Run the index.js file in terminal “node index.js”
+Output
+Data read from file: Hello, this is some text in the input file.

@@ -1,0 +1,127 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Layout Demo App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Layout Demo'),
+      ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              'Column Example',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            Container(
+              color: Colors.blue,
+              height: 100,
+              child: Center(
+                child: Text(
+                  'Item 1',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            Container(
+              color: Colors.green,
+              height: 100,
+              child: Center(
+                child: Text(
+                  'Item 2',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Row Example',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  color: Colors.orange,
+                  width: 100,
+                  height: 100,
+                  child: Center(
+                    child: Text(
+                      'Item 1',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.purple,
+                  width: 100,
+                  height: 100,
+                  child: Center(
+                    child: Text(
+                      'Item 2',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Stack Example',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  color: Colors.yellow,
+                  width: 200,
+                  height: 200,
+                ),
+                Text(
+                  'Stacked Item',
+                  style: TextStyle(color: Colors.black, fontSize: 18),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+            Text(
+              'ListView Example',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text('List Item $index'),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+

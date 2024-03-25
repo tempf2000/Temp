@@ -1,0 +1,26 @@
+1 create
+
+db.tablename.insertOne({name:"Anubhav",age:"20 years",gender:"male"})
+
+db.tablename.insertMany([
+{ name : “ test” , Lname : “Ltest” , Age : “19 years” , Gender : “male “},
+{ name : “ test2” , Lname : “Ltest2” , Age : “19 years” , Gender : “male “},
+{ name : “ test3” , Lname : “Ltest3” , Age : “19 years” , Gender : “male “}
+])
+
+
+2 read
+db.tablename.find()
+db.tablename.findOne()
+
+3 update
+db.tablename.updateOne({name:"Anubhav"},{$set:{age:"19 years"}});
+db.tablename.updateMany({ Gender : “male” } , { $ set : { Age : “19 years “}})
+db.tablename.replaceOne({ name : “test” } , { name : “test3“})
+
+
+
+4 delete
+
+db.tablename.deleteOne({name:"Anubhav"});
+db.tablename.deleteMany({Age : ”19 years”})
