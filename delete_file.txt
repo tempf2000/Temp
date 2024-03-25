@@ -1,0 +1,26 @@
+steps 1
+
+create a file named "sample.txt" in the same folder where is your index.js file
+
+sample.txt
+hello 
+
+step 2
+
+Node.js code to delete the 'sample.txt' file
+
+index.js
+
+var fs=require('fs');
+fs.readfile('sample.html',function(err,data){ 
+if(err)throw err;
+console.log(data.tostring('utf8'));
+});
+
+step 3
+
+Run the index.js file-> node index.js
+
+Output
+file deleted
+
