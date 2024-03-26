@@ -1,0 +1,30 @@
+write file code
+
+const fs = require('fs');
+
+const data = 'This is the new content of the file.';
+fs.writeFile('input.txt', data, (err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('Data has been written to file successfully.');
+});
+
+output 
+This is the new content of the file
+
+
+
+read file code
+
+const fs = require('fs');
+
+fs.readFile('input.txt', 'utf8', (err, data) => {
+  if (err) {
+    throw err;
+  }
+  console.log('file content:', data);
+});
+
+output
+hello
